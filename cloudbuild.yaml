@@ -1,0 +1,14 @@
+ steps:
+ # Build the container image
+ - name: 'gcr.io/cloud-builders/docker'
+   args: ['buildx' , 'build', '--no-cache', '--platform',  'linux/amd64', '-t' ,'gcr.io/$PROJECT_ID/streamlit-de-monitor:$COMMIT_SHA', '.']
+
+ # Push the container image to Container Registry
+ - name: 'gcr.io/cloud-builders/docker'
+   args: ['push','--no-cache', 'gcr.io/$PROJECT_ID/streamlit-de-monitor:$COMMIT_SHA']
+
+ - name: 'gcr.io/compute-image-tools/gce_vm_image_startup_scripts'
+   env:
+     - 'GOOGLE_ENTRYPOINT=python streamlit run test.py --server.port=8501 --browser.serverAddress="0.0.0.0"'
+   args: ['/bin/sh', '-c', 'docker run -d --name streamlit-app -p 8501:8501 gcr.io/$PROJECT_ID/streamlit-de-monitor:$COMMIT_SHA']
+
