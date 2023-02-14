@@ -11,4 +11,3 @@
    env:
      - 'GOOGLE_ENTRYPOINT=python streamlit run test.py --server.port=8501 --browser.serverAddress="0.0.0.0"'
    args: ['/bin/sh', '-c', 'docker run -d --name streamlit-app -p 8501:8501 gcr.io/$PROJECT_ID/streamlit-de-monitor:$COMMIT_SHA']
-
