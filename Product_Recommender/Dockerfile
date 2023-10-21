@@ -5,10 +5,10 @@ RUN pip install --upgrade pip
 
 WORKDIR /app
 
-COPY streamlit/requirements.txt .
+COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r  requirements.txt
 
-COPY streamlit/test.py .
+COPY data_app.py .
 
 CMD streamlit run test.py --server.port=8501 --browser.serverAddress="0.0.0.0"
