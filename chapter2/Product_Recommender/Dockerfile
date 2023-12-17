@@ -11,4 +11,4 @@ RUN pip install --no-cache-dir -r  requirements.txt
 
 COPY data_app.py .
 
-CMD streamlit run test.py --server.port=8501 --browser.serverAddress="0.0.0.0"
+CMD streamlit run data_app.py --server.port=8501 --browser.serverAddress="0.0.0.0"
