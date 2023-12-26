@@ -1,6 +1,5 @@
 import streamlit as st
 
-#single input select
 
 
 #title and header
