@@ -32,8 +32,7 @@ if selected_products:
     st.write('Recommended Products:')
     st.dataframe(df_recommendations,
                  column_config={
-
-                     'Likelihood of Purchase': st.column_config.NumberColumn(
+                        'Likelihood of Purchase': st.column_config.NumberColumn(
                          'Likelihood of Purchase',
                          help="How likely is user to buy this **product**",
                          min_value=0,
