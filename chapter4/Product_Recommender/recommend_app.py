@@ -6,11 +6,15 @@ import pandas as pd
 products = ['Phone', 'Laptop', 'Headphones', 'Camera', 'Smartwatch', 'Tablet', 'Charger', 'Keyboard', 'Mouse', 'Speaker']
 # Product data with categories
 product_categories = {
-    'Educational': ['Book', 'Online Course', 'Educational Toy'],
-    'Travel': ['Luggage', 'Travel Pillow', 'World Map'],
-    'Books': ['Fiction', 'Non-Fiction', 'Biography'],
-    'Gadgets': ['Phone', 'Headset', 'Smartwatch']
+    'Educational': ['Book', 'Online Course', 'Educational Toy', 'Science Kit', 'Math Workbook', 'Language Learning Software'],
+    'Travel': ['Luggage', 'Travel Pillow', 'World Map', 'Travel Guidebook', 'Portable Charger', 'Travel Backpack'],
+    'Books': ['Fiction', 'Non-Fiction', 'Biography', 'Mystery', 'Science Fiction', 'Historical Fiction', 'Self-Help'],
+    'Gadgets': ['Phone', 'Headset', 'Smartwatch', 'Laptop', 'Tablet', 'E-reader', 'Portable Speaker', 'Fitness Tracker'],
+    'Home & Kitchen': ['Coffee Maker', 'Blender', 'Smart Home Device', 'Cookware Set', 'Decorative Vase', 'Bedding Set'],
+    'Fashion': ['T-shirt', 'Jeans', 'Dress', 'Watch', 'Handbag', 'Sneakers', 'Sunglasses', 'Jacket'],
+    'Health & Wellness': ['Yoga Mat', 'Fitness Band', 'Protein Powder', 'Skincare Product', 'Haircare Kit', 'Vitamins', 'Aromatherapy Diffuser']
 }
+
 def generate_random_recommendations(selected_products, products, num_recommendations=3):
     """Generate random product recommendations."""
     available_products = [p for p in products if p not in selected_products]
