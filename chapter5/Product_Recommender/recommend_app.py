@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import pandas as pd
 import matplotlib.pyplot as plt
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 @st.cache_data
 def load_data(file_path):
     return pd.read_csv(file_path)
