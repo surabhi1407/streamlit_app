@@ -3,12 +3,9 @@ from surprise.model_selection import GridSearchCV
 import joblib
 import pandas as pd
 
-
 df = pd.read_csv('../data/products_sales.csv')
-
 reader = Reader(rating_scale=(1, 5))
 data = Dataset.load_from_df(df[['User ID', 'Product', 'Rating']], reader)
-
 param_grid = {
     'n_epochs': [5, 10, 20],  # Number of iteration of the SGD procedure
     'lr_all': [0.002, 0.005, 0.01],  # Learning rate for all parameters
