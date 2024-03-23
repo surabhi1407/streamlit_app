@@ -10,5 +10,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r  requirements.txt
 
 COPY data_app.py .
+COPY recommend_app_old.py .
+COPY top_products_app.py .
 
 CMD streamlit run data_app.py --server.port=8501 --browser.serverAddress="0.0.0.0"
