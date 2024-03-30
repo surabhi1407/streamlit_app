@@ -74,5 +74,5 @@ def recommend_main():
                             fig = plot_likelihood_of_purchase(ranked_products)
                             st.pyplot(fig)
         elif submit_button:
-            st.write('Please select a category and at least one product to see recommendations.')
+            st.warning('Please select a category and at least one product to see recommendations.')
 
