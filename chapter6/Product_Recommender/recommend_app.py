@@ -2,14 +2,17 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from joblib import load
+import os
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
 @st.cache_data
 def load_data(file_path):
     return pd.read_csv(file_path)
 
-product_sales = load_data('data/products_sales.csv')
 
+
+current_dir = os.path.dirname(__file__)
+product_sales_file_path = os.path.join(current_dir, 'data', 'products_sales.csv')
+product_sales = load_data(product_sales_file_path)
 def predict_and_rank(user_id, category, product_sales):
 
     if user_id not in product_sales['User ID'].unique():

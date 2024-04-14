@@ -2,12 +2,15 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
 def load_data(file_path):
     return pd.read_csv(file_path)
 
-sales_df = load_data('data/products_sales.csv')
+current_dir = os.path.dirname(__file__)
+product_sales_file_path = os.path.join(current_dir, 'data', 'products_sales.csv')
+sales_df = load_data(product_sales_file_path)
+
 sales_df['Order Date'] = pd.to_datetime(sales_df['Order Date'])
 
 def plot_sales_over_time(sales_df):
