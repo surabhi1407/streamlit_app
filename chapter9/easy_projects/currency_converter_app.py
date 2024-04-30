@@ -12,7 +12,7 @@ def convert_currency(amount, from_currency, to_currency, api_key):
 
 st.title("Currency Converter")
 
-api_key = '7f84be0a59639a01a1c30553'
+api_key = 'xxx'
 
 amount = st.text_input("Amount to convert", "1")
 from_currency = st.text_input("From Currency (e.g., USD)", "USD")
