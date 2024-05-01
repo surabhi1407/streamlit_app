@@ -1,31 +1,28 @@
 import streamlit as st
 import os
+from  portfolio import *
+from contact import *
 
-def show():
-    st.set_page_config(page_title='John Newman Portfolio', layout='wide')
-
-    tabs = ['Home', 'Portfolio', 'Projects', 'Experience', 'Contact']
-    chosen_tab = st.tabs(tabs)
-
+def home_show():
     col1, col2, col3, col4 = st.columns((1,1,1,1))
 
     with col2:
-        st.header("John Turner")
+        st.title("HELLO !")
+        st.header("I am John Turner")
 
         st.write("""
-                    ###### Data Exploration | Data Visualization | Story Telling 
-                    Hello! I'm John Turner, a passionate data professional focused on building stories from the data. I love analyzing the data, cleaning it and looking for patterms. 
+                    I am a passionate data professional focused on building stories from the data. I love analyzing the data, cleaning it and looking for patterms. 
                     I have considerable experience in building complex pipelines for Data ingestion and modeling. I have worked with numerous business and Creative stakeholders. 
                     I believe every Dataset has a story to be told 
                 """)
         st.write("""
-                        - **Key Skills**: 
+                        - **My Key Skills are** 
                             - Data Exploration
                             - Data Modeling
                             - Building Ingestion pipeline 
                             - Business Intelligence
                                                         
-                        - **Hobbies and Interests**: 
+                        - **I love to do** 
                             - Photography 
                             - Travel 
                             - Reading
@@ -34,8 +31,17 @@ def show():
 
     with col3:
         base_dir = os.path.dirname(__file__)
-        image_path = os.path.join(base_dir, 'images', 'portfolio1.png')
+        image_path = os.path.join(base_dir, 'assets', 'portfolio1.png')
         st.image(image_path, width=500)
 
+st.set_page_config(page_title='John Turner Portfolio', layout='wide')
+
 if __name__ == "__main__":
-    show()
+
+    tab1, tab2, tab3 = st.tabs(["Home","Portfolio", "Contact"])
+    with tab1:
+        home_show()
+    with tab2:
+        portfolio_show()
+    with tab3:
+        contact_show()
