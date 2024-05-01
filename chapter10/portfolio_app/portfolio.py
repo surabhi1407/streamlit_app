@@ -10,18 +10,18 @@ def portfolio_show():
         with st.expander("Experience & Awards"):
             st.write("""
                     - 5+ Years of experience
-                    - Specialized in UX/UI
-                    - Marketing Specialization
-                    - Graphic Design Certification
+                    - Specialized in optimizing and deploying robust prediction models
+                    - Consumer Marketing Specialization
+                    - Top Candidate in Eucley's cohort 2020
                 """)
 
     with col2:
         with st.expander("Education"):
             st.write("""
-                    - Post graduation in Computer
-                    - Design degree
-                    - Marketing course in Udemy
-                    - Graphic Design Certification
+                    - Post graduation in Data Science
+                    - Visualization degree from Courera
+                    - Advance Data modeling course in Udemy
+                    - Cloud Computing Certification
                 """)
 
     col1, col2, col3 = st.columns((1,2,1))
