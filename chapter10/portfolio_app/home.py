@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 from  portfolio import *
 from contact import *
 
