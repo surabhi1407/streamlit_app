@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from read_again import *
 
-API_KEY = 'xxx'
+API_KEY = '717a020f89ed40daba1f9a4ae644e4a0'
 BASE_URL = 'https://newsapi.org/v2/top-headlines'
 
 @st.cache_data
