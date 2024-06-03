@@ -69,9 +69,6 @@ def news_show():
                 toggle_favorite(article)
         st.write("---")
 
-
-
-
 if __name__ == "__main__":
 
     tab1, tab2= st.tabs(["News","Read again"])
